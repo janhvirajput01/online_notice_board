@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&family=Roboto&display=swap");
+
+:root {
+  --primary-font-family: "poppins", sans-serif;
+  --light-white: #f5f8fa;
+  --gray: #5e6278;
+  --gray-1: #e3e3e3;
+}
+
+body {
+  font-family: var(--primary-font-family);
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  padding: 0 0 100px;
+  background: url("img/images/bg.png") no-repeat bottom center/contain;
+  min-height: 100%;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wrapper .logo {
+  margin-top: 3rem;
+  font-size: 2.5rem;
+  padding: 20px;
+}
+.wrapper .logo :hover {
+  text-decoration: none;
+}
+
+.wrapper input,
+.wrapper select {
+  background-color: var(--light-white);
+  border-color: var(--light-white);
+  color: var(--gray);
+  border: none;
+}
+.wrapper select {
+  width: 100%;
+  border-radius: 5px;
+  padding: 8px;
+}
+.wrapper input:focus,
+.wrapper select:focus {
+  box-shadow: none;
+}
+
+.wrapper .submit_btn {
+  padding: 15px;
+  font-weight: 500;
+}
+.wrapper .login_with {
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+.wrapper .submit_btn:focus,
+.wrapper .login_with:focus {
+  box-shadow: none;
+}
+.wrapper .login_with img {
+  margin-right: 20px;
+  max-width: 8%;
+}
+a {
+  color: white;
+}
+
+.wrapper .container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrapper .container .row .card .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper .reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

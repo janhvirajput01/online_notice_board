@@ -1,0 +1,13 @@
+if($details=="" || $sub=="" || $user=="")
+	{
+	$err="<font color='red'>fill all the fileds first</font>";	
+	}
+	else
+	{
+		foreach($user as $v)
+		{
+mysqli_query($conn,"insert into notice values('','$v','$sub','$details',now())");
+		}
+		
+		$err="<font color='green'>Notice added Successfully</font>";	
+	}

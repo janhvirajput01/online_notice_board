@@ -1,0 +1,32 @@
+<?php 
+session_start();
+include('../connection.php');
+$user = $_SESSION['user'];
+
+// Fetch the department name of the user from the user table
+$sql = mysqli_query($conn, "SELECT DEPARTMENT_NAME FROM user WHERE email = '$user'");
+$user_row = mysqli_fetch_assoc($sql);
+$user_department = $user_row['DEPARTMENT_NAME'];
+
+// Store the user department in a session variable
+$_SESSION['user_department'] = $user_department;
+?>
+<?php
+
+include('../connection.php');
+
+// Fetch the notices based on the user department
+$user_department = $_SESSION['user_department'];
+$q = mysqli_query($conn, "SELECT * FROM notice WHERE DEPARTMENT_NAME = '$user_department'");
+$rr=mysqli_num_rows($q);
+if(!$rr)
+{
+echo "<h2 style='color:red'>No any notice for You !!!</h2>";
+}
+else
+{
+?>
+
+
+
+
