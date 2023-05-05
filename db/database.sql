@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2023 at 07:44 AM
+-- Generation Time: May 05, 2023 at 07:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -58,13 +58,7 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`id`, `name`, `size`, `downloads`) VALUES
-(1, '3rd sem.pdf', 492548, 5),
-(2, '4th sem.pdf', 624625, 2),
-(3, '3rd sem.pdf', 492548, 1),
-(5, '1st sem.pdf', 579997, 0),
-(6, '1st sem.pdf', 579997, 0),
-(7, '1st sem.pdf', 579997, 0),
-(19, 'html.pdf', 498781, 0);
+(1, '1st sem.pdf', 579997, 0);
 
 -- --------------------------------------------------------
 
@@ -86,23 +80,27 @@ CREATE TABLE `notice` (
 --
 
 INSERT INTO `notice` (`notice_id`, `subject`, `Description`, `Date`, `DEPARTMENT_NAME`, `SEMESTER`) VALUES
-(2, 'dhrfb', 'dbgyg', '2023-04-12 12:12:08', 'CE', '4'),
-(3, 'cd', 'hello', '2023-04-12 12:12:42', 'CSE', '3'),
-(4, 'cd', 'hello', '2023-04-12 12:12:50', 'CSE', '3'),
-(5, 'cd', 'hello', '2023-04-12 12:13:20', 'CSE', '3'),
-(6, 'cd', 'hello', '2023-04-12 12:13:45', 'CSE', '3'),
-(7, 'jddn', 'jhju', '2023-04-12 12:17:54', 'EEE', '3'),
-(8, 'hh', 'njh', '2023-04-12 12:18:02', 'EEE', '2'),
-(9, 'hello', 'njdh', '2023-04-12 12:18:50', 'ME', '3'),
-(10, 'hello there', 'jhdhj', '2023-04-12 12:19:21', 'EEE', '3'),
-(11, 'hey jk', 'djhd', '2023-04-12 13:16:32', 'CSE', '4'),
-(12, 'bhj', 'hgj', '2023-04-12 14:13:09', 'CSE', '4'),
-(13, 'fej', 'djdgd', '2023-04-12 14:26:57', 'CSE', '4'),
-(14, 'JHJ', 'JBHJ', '2023-04-12 15:04:08', 'CSE', '4'),
-(15, 'hyedu', 'sbxj', '2023-04-12 23:00:22', 'EEE', '2'),
-(16, 'hello there', 'this is here by infromend', '2023-04-22 22:44:34', 'EEE', '3'),
-(17, 'cse', 'cse', '2023-04-22 22:45:40', 'CSE', '3'),
-(18, 'eee', 'eee', '2023-04-22 22:47:41', 'EEE', '3');
+(1, 'Hello', 'it is infrom that...', '2023-05-03 12:16:14', 'CSE', '3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publicnotice`
+--
+
+CREATE TABLE `publicnotice` (
+  `notice_id` int(11) NOT NULL,
+  `subject` varchar(100) NOT NULL,
+  `Description` text NOT NULL,
+  `Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `publicnotice`
+--
+
+INSERT INTO `publicnotice` (`notice_id`, `subject`, `Description`, `Date`) VALUES
+(0, 'hello', 'infrom to all', '2023-05-03 12:16:48');
 
 -- --------------------------------------------------------
 
@@ -126,14 +124,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `pass`, `gender`, `DEPARTMENT_NAME`, `SEMESTER`, `regid`) VALUES
-(1, 'John Smith', 'john@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'm', 'CSE', '2nd', 2147483647),
-(9, 'jk', 'kj@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'CSE', '1st', 2147483647),
-(10, 'kittu', 'chotu@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'CSE', '4th', 2147483647),
-(11, 'KITTI', 'k@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'EEE', '1st', 2147483647),
-(12, 'jk', 'jk@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'CSE', '4th', 2147483647),
-(13, 'komal', 'komal@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'EEE', '3rd', 2147483647),
-(14, 'anjali', 'aj@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'CSE', '3rd', 2147483647),
-(15, 'jinal', 'jina@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'EEE', '2nd', 2147483647);
+(1, 'janhvi', 'janhvi@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'f', 'CSE', '2nd', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -179,19 +170,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
